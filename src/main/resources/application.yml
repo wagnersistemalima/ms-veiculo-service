@@ -1,6 +1,8 @@
 micronaut:
   application:
     name: veiculoService
+  server:
+    port: 8080
 
 datasources:
   default:
