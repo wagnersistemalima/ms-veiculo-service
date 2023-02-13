@@ -1,6 +1,6 @@
 package br.com.sistemalima.exceptions
 
-import br.com.sistemalima.RegrasVeiculoEnum
+import br.com.sistemalima.enum.RegrasVeiculoEnum
 
 class VeiculoException: NoStacktraceException {
 

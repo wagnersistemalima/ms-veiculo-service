@@ -1,6 +1,6 @@
 package br.com.sistemalima.controller.handler
 
-import br.com.sistemalima.RegrasVeiculoEnum
+import br.com.sistemalima.enum.RegrasVeiculoEnum
 import br.com.sistemalima.exceptions.VeiculoException
 import io.micronaut.context.annotation.Requires
 import io.micronaut.http.HttpRequest
@@ -42,8 +42,14 @@ class VeiculoExceptionHandler: AbstractHandler(), ExceptionHandler<VeiculoExcept
 
     override fun mensagem(httpRequest: HttpRequest<*>?, exception: Exception?): String {
         return when(exception) {
-            is VeiculoException -> "Veiculo não encontrado"
-            else -> {"Ocorreu uma falha de negocio"}
+            is VeiculoException -> {
+                when(exception.regrasVeiculoEnum) {
+                    RegrasVeiculoEnum.NAO_ENCONTRADO -> "Veiculo não encontrado"
+                    RegrasVeiculoEnum.ESTOQUE_INDISPONIVEL -> "Veiculo indisponivel para venda"
+                }
+            } else -> {
+                "Ocorrreu uma falha no negocio"
+            }
         }
     }
 

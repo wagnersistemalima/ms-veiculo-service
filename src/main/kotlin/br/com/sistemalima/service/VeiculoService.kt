@@ -1,6 +1,6 @@
 package br.com.sistemalima.service
 
-import br.com.sistemalima.RegrasVeiculoEnum
+import br.com.sistemalima.enum.RegrasVeiculoEnum
 import br.com.sistemalima.exceptions.InternalGenericException
 import br.com.sistemalima.exceptions.VeiculoException
 import br.com.sistemalima.model.Observabilidade

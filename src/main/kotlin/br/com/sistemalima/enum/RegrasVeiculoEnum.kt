@@ -1,4 +1,4 @@
-package br.com.sistemalima
+package br.com.sistemalima.enum
 
 enum class RegrasVeiculoEnum(val codigo: Int) {
     NAO_ENCONTRADO(10),
